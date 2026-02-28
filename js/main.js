@@ -32,6 +32,38 @@
     });
   }
 
+  // ----- Hero carousel -----
+  (function () {
+    var slides = document.querySelectorAll(".carousel-slide");
+    var dots = document.querySelectorAll(".carousel-dot");
+    var current = 0;
+    var interval;
+
+    function goTo(index) {
+      slides[current].classList.remove("active");
+      dots[current].classList.remove("active");
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add("active");
+      dots[current].classList.add("active");
+    }
+
+    function advance() {
+      goTo(current + 1);
+    }
+
+    if (slides.length > 1) {
+      interval = setInterval(advance, 4500);
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          clearInterval(interval);
+          goTo(parseInt(this.getAttribute("data-target"), 10));
+          interval = setInterval(advance, 4500);
+        });
+      });
+    }
+  })();
+
   // ----- Header shadow on scroll -----
   const header = document.getElementById("site-header");
   if (header) {

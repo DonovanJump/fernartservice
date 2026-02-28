@@ -18,7 +18,7 @@
   --clr-text-light: #5a5a5a;
   --clr-accent: #3d6b4f;
   --clr-accent-light: #e8f0eb;
-  --clr-border: #e0ddd8;
+  --clr-border: #3d6b4f;
   --clr-hero-bg: #2c3e2e;
   --clr-hero-text: #faf9f6;
   --ff-body: "Georgia", "Times New Roman", serif;
@@ -91,7 +91,9 @@ a:hover {
   font-family: var(--ff-body);
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color var(--transition), color var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
   border: none;
   text-align: center;
 }
@@ -206,25 +208,100 @@ a:hover {
   height: 2px;
   background-color: var(--clr-text);
   border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
 }
 
 /* ============================================
    HERO
    ============================================ */
 #hero {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 80vh;
   padding-top: 64px; /* offset for fixed header */
-  background-color: var(--clr-hero-bg);
   color: var(--clr-hero-text);
   text-align: center;
 }
 
+/* --- Carousel background --- */
+.hero-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+/* Placeholder gradients — replace background-image with real photos later */
+.carousel-slide:nth-child(1) {
+  background: linear-gradient(135deg, #2c3e2e 0%, #233625 60%, #162414 100%);
+}
+.carousel-slide:nth-child(2) {
+  background: linear-gradient(135deg, #5c4a2a 0%, #3d2e1a 60%, #2c2010 100%);
+}
+.carousel-slide:nth-child(3) {
+  background: linear-gradient(135deg, #1a2e3d 0%, #2c3e50 60%, #1a2535 100%);
+}
+.carousel-slide:nth-child(4) {
+  background: linear-gradient(135deg, #2e1a3d 0%, #231530 60%, #18101f 100%);
+}
+
+/* --- Darkening overlay for text contrast --- */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+/* --- Hero content sits above carousel + overlay --- */
 .hero-inner {
+  position: relative;
+  z-index: 2;
   padding: var(--space-xl) 0;
+}
+
+/* --- Dot indicators --- */
+.carousel-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(250, 249, 246, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.carousel-dot.active {
+  background-color: var(--clr-hero-text);
+  transform: scale(1.25);
 }
 
 #hero-heading {
@@ -322,7 +399,7 @@ a:hover {
 .image-placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background-color: var(--clr-border);
+  background: linear-gradient(135deg, #293d1a 0%, #1b3015 60%, #181f10 100%);
   border-radius: var(--radius);
 }
 
@@ -479,6 +556,18 @@ a:hover {
   font-size: 0.85rem;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25rem;
+}
+
+.center p {
+  color: var(--clr-hero-text);
+  font-size: 1rem;
+}
+
 .footer-nav a:hover {
   color: var(--clr-hero-text);
 }
@@ -508,7 +597,9 @@ a:hover {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-    transition: transform var(--transition), opacity var(--transition);
+    transition:
+      transform var(--transition),
+      opacity var(--transition);
   }
 
   #primary-nav.open {

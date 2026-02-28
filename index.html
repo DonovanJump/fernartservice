@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <!-- ===== HEADER / NAV ===== -->
+    <!-------- HEADER / NAV -------->
     <header id="site-header">
       <div class="container header-inner">
         <a href="#hero" class="logo" aria-label="Fern Art Services home">
@@ -28,8 +28,17 @@
       </div>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-------- HERO -------->
     <section id="hero" aria-labelledby="hero-heading">
+      <!-- Background carousel (placeholder slides — swap for real images later) -->
+      <div class="hero-carousel" aria-hidden="true">
+        <div class="carousel-slide active"></div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
       <div class="container hero-inner">
         <h1 id="hero-heading">Art Handled with&nbsp;Care</h1>
         <p class="hero-sub">
@@ -41,9 +50,17 @@
           <a href="#services" class="btn btn-secondary">Our Services</a>
         </div>
       </div>
+
+      <!-- Slide indicators -->
+      <div class="carousel-dots" aria-hidden="true">
+        <button class="carousel-dot active" data-target="0"></button>
+        <button class="carousel-dot" data-target="1"></button>
+        <button class="carousel-dot" data-target="2"></button>
+        <button class="carousel-dot" data-target="3"></button>
+      </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
+    <!-------- SERVICES -------->
     <section id="services" aria-labelledby="services-heading">
       <div class="container">
         <h2 id="services-heading" class="section-title">What We Do</h2>
@@ -88,11 +105,15 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-------- ABOUT -------->
     <section id="about" aria-labelledby="about-heading">
       <div class="container about-inner">
         <div class="about-image">
-          <div class="image-placeholder" aria-label="Team photo placeholder"></div>
+          <div class="image-placeholder" aria-label="Team photo placeholder">
+            <div class="center">
+              <p>Place Holder Image</p>
+            </div>
+          </div>
         </div>
         <div class="about-text">
           <h2 id="about-heading" class="section-title">About Fern</h2>
@@ -108,7 +129,7 @@
       </div>
     </section>
 
-    <!-- ===== WHY US ===== -->
+    <!-------- WHY US -------->
     <section id="why-us" aria-labelledby="why-heading">
       <div class="container">
         <h2 id="why-heading" class="section-title">Why Choose Fern?</h2>
@@ -149,7 +170,7 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-------- CONTACT -------->
     <section id="contact" aria-labelledby="contact-heading">
       <div class="container contact-inner">
         <div class="contact-info">
@@ -161,36 +182,52 @@
           <ul class="contact-details">
             <li>
               <strong>Email:</strong>
-              <a href="mailto:hello@fernartservices.com">hello@fernartservices.com</a>
+              <a href="mailto:hello@fernartservices.com">email@example.com</a>
             </li>
             <li>
               <strong>Phone:</strong>
               <a href="tel:+15551234567">(555) 123-4567</a>
             </li>
-            <li>
-              <strong>Location:</strong> Filler City, State
-            </li>
+            <li><strong>Location:</strong> City, State</li>
           </ul>
         </div>
         <form class="contact-form" action="#" method="post" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your name"
+            />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+            />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Tell us about your project..."
+            ></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-------- FOOTER -------->
     <footer id="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand">
