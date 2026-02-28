@@ -1,6 +1,107 @@
-<div class="home">
-    <header class="site-header">Header Go here</header>
-    <nav class="nav"></nav>
-    <div></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fern Art Services — professional art handling, installation, packing, and transportation for galleries, collectors, and institutions."
+    />
+    <title>Fern Art Services | Fine Art Handling &amp; Installation</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-</div>
+  <body>
+    <header id="site-header">
+      <div class="container header-inner">
+        <a href="#hero" class="logo" aria-label="Fern Art Services home">
+          <span class="logo-leaf" aria-hidden="true"></span>
+          <span class="logo-text">Fern Art Services</span>
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="primary-nav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="#services">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="why-us" aria-labelledby="why-heading">
+      <div class="container">
+        <h2 id="why-heading" class="section-title">Why Choose Fern?</h2>
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-number">01</div>
+            <h3>Example Point</h3>
+            <p>
+              Example text will be filled in here after some discussion and
+              design.
+            </p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-number">02</div>
+            <h3>Example Point</h3>
+            <p>
+              Example text will be filled in here after some discussion and
+              design.
+            </p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-number">03</div>
+            <h3>Example Point</h3>
+            <p>
+              Example text will be filled in here after some discussion and
+              design.
+            </p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-number">04</div>
+            <h3>Example Point</h3>
+            <p>
+              Example text will be filled in here after some discussion and
+              design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-leaf" aria-hidden="true"></span>
+          <span>Fern Art Services</span>
+        </div>
+        <p class="footer-tagline">
+          Professional art handling with personal care.
+        </p>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-nav">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="footer-copy">
+          &copy; <span id="currentYear"></span> Fern Art Services. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
