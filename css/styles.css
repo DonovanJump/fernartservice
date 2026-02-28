@@ -79,7 +79,7 @@ a:hover {
 
 .section-intro {
   color: var(--clr-text-light);
-  max-width: 600px;
+  max-width: 800px;
   margin-bottom: var(--space-lg);
 }
 
