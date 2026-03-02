@@ -29,6 +29,8 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 6rem;
+  --font-sm: 0.9rem;
+  --font-md: 1rem;
   --radius: 4px;
   --transition: 0.3s ease;
 }
@@ -547,7 +549,7 @@ a:hover {
 }
 
 .footer-tagline {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: var(--space-md);
 }
 
